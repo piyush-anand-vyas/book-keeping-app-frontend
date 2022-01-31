@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import {BrowserRouter as Router} from 'react-router-dom';
+import Routes from './routes/routeConfigs';
+import Navigation from './components/SideBar/Navigation';
+import Registration from './components/Registration';
 
-function App() {
+export default function App() {
+  // const [isLogin, setIsLogin] = useState(false);
+
+  // useEffect(() => {
+  //   if(localStorage.getItem('token')!=null){
+  //     setIsLogin(true);
+  //   }
+  //   else{
+  //     setIsLogin(false);
+  //   }
+  // }, [isLogin]);
+  // const [progress, setProgress] = useState(0)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div>
+    {/* { isLogin && */}
+    <Router>
+    <Routes/>
+    </Router>
+    
+  </div> 
   );
 }
-
-export default App;
